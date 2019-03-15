@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "events-api"
+		},
+		{
+			"path": "react-redux"
+		}
+	],
+	"settings": {}
+}
