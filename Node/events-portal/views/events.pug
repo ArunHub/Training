@@ -1,0 +1,21 @@
+extends index.pug
+block mainPlaceHolder
+    h1=title
+    h4=subTitle
+    table.table.table-hover.table-striped
+        thead
+            tr
+                th Event code
+                th Event name
+                th Start Date
+                th Fees
+                th show details
+        tbody
+        each event in events
+            tr
+                td=event.eventCode
+                td=event.eventName
+                td=event.startDate
+                td=event.fees
+                td
+                    a(href="/events/"+event.eventId) show details
