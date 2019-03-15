@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "outDir": "src",
+        "noEmitOnError": true,
+        "watch": true,
+        "sourceMap": true,
+        "moduleResolution": "node",
+        "module": "commonjs",
+        "experimentalDecorators": true
+    }
+}
