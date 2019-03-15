@@ -1,0 +1,17 @@
+{
+  "name": "JS-Testing",
+  "version": "1.0.0",
+  "description": "- Jasmine\r     * Command line using CLI\r         > configure Jasmine\r             + npm init -y\r                 $ generate package.json with defaults\r     * Browser based testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jasmine": "^3.3.8",
+    "@types/node": "^11.9.0",
+    "jasmine": "^3.3.1"
+  }
+}

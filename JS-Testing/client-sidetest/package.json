@@ -1,0 +1,17 @@
+{
+  "name": "client-sidetest",
+  "version": "1.0.0",
+  "description": "Jasmine Spy\r - spyOn() and createSpy()\r - a spy( or mock) is process to verify, if the fake is been visited or not on which the spy is created or monitored.\r - Jasmine Spy Matchers in assertion (note: These works based on \"spyOn()\")",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jquery": "^3.3.29",
+    "jasmine-jquery": "^2.1.1",
+    "jquery": "^3.3.1"
+  }
+}
