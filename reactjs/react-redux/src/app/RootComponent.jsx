@@ -8,7 +8,9 @@ import SepStore from "./store/store";
 export default class RootComponent extends Component {
     render() {
         return (
+            // Provider component gives connection btw react app and redux
             <Provider store={SepStore}>
+            {/* initialising the root router */}
                 <BrowserRouter>
                     <MainLayout />
                 </BrowserRouter>

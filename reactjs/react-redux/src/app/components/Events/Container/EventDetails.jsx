@@ -15,8 +15,9 @@ class EventDetails extends Component {
 
         return (
             <div>
+               {(this.props.event !== null) ? <h1>Details of {this.props.event.eventName}</h1> : null}
                 {
-                    (this.props.event !== null) ?
+                    (this.props.event !== null) ?                    
                         <table className="table table-hover table-striped">
                             <tbody>
                                 <tr>
@@ -34,24 +35,22 @@ class EventDetails extends Component {
                                 <tr>
                                     <th>Start Date</th>
                                     <td><span>{
-                                        // new Intl.DateTimeFormat("es-ES", {
-                                        //     year: "numeric",
-                                        //     month: "long",
-                                        //     day: "2-digit"
-                                        // }).format(Date.parse(this.props.event.startDate))
-                                        this.props.event.startDate
+                                        new Intl.DateTimeFormat("en-es", {
+                                            year: "numeric",
+                                            month: "long",
+                                            day: "2-digit"
+                                        }).format(Date.parse(this.props.event.startDate))
                                     }</span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>End date</th>
                                     <td><span>{
-                                        // new Intl.DateTimeFormat("es-ES", {
-                                        //     year: "numeric",
-                                        //     month: "long",
-                                        //     day: "2-digit"
-                                        // }).format(Date.parse(this.props.event.endDate))
-                                        this.props.event.endDate
+                                        new Intl.DateTimeFormat("en-es", {
+                                            year: "numeric",
+                                            month: "long",
+                                            day: "2-digit"
+                                        }).format(Date.parse(this.props.event.endDate))
                                     }</span>
                                     </td>
                                 </tr>
@@ -59,13 +58,12 @@ class EventDetails extends Component {
                                     <th>Fees</th>
                                     <td><span>
                                         {
-                                            // new Intl.NumberFormat("en-es", {
-                                            //     style: "currency",
-                                            //     currency: "EUR",
-                                            //     maximumFractionDigits: 2,
-                                            //     minimumFractionDigits: true
-                                            // }).format(this.props.event.fees)
-                                            this.props.event.fees
+                                            new Intl.NumberFormat("en-es", {
+                                                style: "currency",
+                                                currency: "EUR",
+                                                maximumFractionDigits: 2,
+                                                minimumFractionDigits: true
+                                            }).format(this.props.event.fees)
                                         }
                                     </span></td>
                                 </tr>
@@ -96,7 +94,7 @@ class EventDetails extends Component {
 
 EventDetails.propTypes = {
     getSingleEvent: propTypes.func.isRequired,
-    event: propTypes.object.isRequired
+    event: propTypes.object
 }
 
 const mapStateToProps = (state) => ({

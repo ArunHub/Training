@@ -9,19 +9,11 @@ export default class EmployeesList extends Component {
         }
     }
 
-    xcomponentDidMount() {
-        let newresults = [{ director: "george" }, { director: "lucs" }, { director: "arun" }, { director: "george lucs" }]
-        this.setState((state, props) => {
-            return {
-                results: [...state.results, newresults]
-            }
-        })
-    }
-
     render() {
 
         return (
             <div>
+                <h1>Employees List</h1>
                 <table className="table table-striped table-hover">
                     <thead>
                         <tr>

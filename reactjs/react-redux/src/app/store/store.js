@@ -1,6 +1,9 @@
-import { applyMiddleware, createStore, compose } from "redux";
+import { applyMiddleware, //used to compose custom and 3rd party middleware in store
+     createStore, // create a new store
+      compose // compose multiple middlewares
+    } from "redux";
 import thunk from "redux-thunk";
-import { logger } from "redux-logger";
+import { logger } from "redux-logger"; // gives every action in store as logs in console
 
 import rootReducer from "../reducers/root-reducer";
 //import default reducer from anonymous : PERIOD

@@ -15,7 +15,7 @@ export default class ErrorBoundary extends Component {
     }
     componentDidCatch(error, info){
         console.log(error,'eeeeeeeeeeeeeee');
-        console.log(info.componentStack,'iiiiiiiiiiiiiii');
+        console.log(info.componentStack,'iiiiiiiiiiiiiii'); //can use pattern to find which component got error at first here
         
     }
   render() {

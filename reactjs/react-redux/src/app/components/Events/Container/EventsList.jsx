@@ -12,13 +12,12 @@ class EventsList extends Component {
         this.props.getAllEvents();
     }
     onNavigation(id) {
-        console.log('id',id)
         this.props.history.push('/events/' + id);
     }
     render() {
-        console.log('')
         return (
             <div>
+                <h1>Events Lists</h1>
                 <table className="table table-striped table-hover">
                     <thead>
                         <tr>
@@ -34,23 +33,21 @@ class EventsList extends Component {
                             this.props.events.map((event, idx) =>
                                 <tr key={idx}>
                                     <td>{event.eventCode}</td>
-                                    <td>{event.evntName}</td>
+                                    <td>{event.eventName}</td>
                                     <td>{
-                                        // new Intl.DateTimeFormat("es-ES", {
-                                        //     year: "numeric",
-                                        //     month: "long",
-                                        //     day: "2-digit"
-                                        // }).format(Date.parse(event.startDate))  
-                                        event.startDate
+                                        new Intl.DateTimeFormat("en-EN", {
+                                            year: "numeric",
+                                            month: "long",
+                                            day: "2-digit"
+                                        }).format(Date.parse(event.startDate))  
                                     }</td>
                                     <td>{
-                                        // new Intl.NumberFormat("en-es", {
-                                        //     style: "currency",
-                                        //     currency: "EUR",
-                                        //     maximumFractionDigits: 2,
-                                        //     minimumFractionDigits: true
-                                        // }).format(event.fees)
-                                        event.fees
+                                        new Intl.NumberFormat("en-es", {
+                                            style: "currency",
+                                            currency: "EUR",
+                                            maximumFractionDigits: 2,
+                                            minimumFractionDigits: true
+                                        }).format(event.fees)
                                     }</td>
                                     <td>
                                         <button className="btn btn-primary" onClick={
