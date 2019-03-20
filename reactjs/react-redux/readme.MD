@@ -1,5 +1,5 @@
 # React
-
+=========================
 Steps to create React App
 - create react folder
 - create package.json
@@ -57,8 +57,9 @@ Steps to create React App
     * "start": "webpack-dev-server --mode development --hot"
     * "build": "rimraf dist && webpack --config ./config/webpack.prod.js --mode production"
 
-=======================
+
 # REDUX
+=======================
 - create store folder and create store.js
 - configure reducers and middlewares
 - Define the action folder and create action-types and event-types in a separate folder
@@ -67,3 +68,8 @@ Steps to create React App
 - create a root-reducer.js file which will combine the multiple reducers using combineReducers function from store
 - expose the redux store to the react application using <Provider /> from react-redux-module
     * https://gist.github.com/ArunHub/77464ea7305a6096eb28d4676bc329f7
+
+# Help
+======
+
+- 
