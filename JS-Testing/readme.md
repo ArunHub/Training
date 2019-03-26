@@ -55,16 +55,16 @@ Test cases
                 => Test-case result
                     >> Compare actual with expected
                     >> The "expect()" object
-                        | Equal
-                        | NotEqual
-                        | True
-                        | False
-                        | GreaterThan
-                        | LessThan
-                        | Be
-                        | Throw
-                        | ThrowError
-                        | Contains
+                        > Equal
+                        > NotEqual
+                        > True
+                        > False
+                        > GreaterThan
+                        > LessThan
+                        > Be
+                        > Throw
+                        > ThrowError
+                        > Contains
 =================================================================================
 =================================================================================
 
@@ -84,3 +84,8 @@ Test cases
 https://github.com/maheshsabnis/jstest
 =======================================
 http://apiapptrainingservice.azurewebsites.net/api/Products
+
+http://3.16.131.52:8080/api/products
+
+https://github.com/maheshsabnis
+
