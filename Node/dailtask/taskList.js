@@ -1,0 +1,54 @@
+var taskList = [{
+    taskname: 'algorithm',
+    count: 0,
+    id: 1
+}, {
+    taskname: 'exercise',
+    count: 0,
+    id: 2
+}, {
+    taskname: 'future',
+    count: 0,
+    id: 3
+}, {
+    taskname: 'shop',
+    count: 0,
+    id: 4
+}, {
+    taskname: 'test_or_ownProject',
+    count: 0,
+    id: 5
+}, {
+    taskname: 'bb',
+    count: 0,
+    id: 6
+}, {
+    taskname: 'doubt',
+    count: 0,
+    id: 7
+}, {
+    taskname: 'stackoverflow',
+    count: 0,
+    id: 8
+}, {
+    taskname: 'household',
+    count: 0,
+    id: 9
+}, {
+    taskname: 'game',
+    count: 0,
+    id: 10
+}, {
+    taskname: 'mail',
+    count: 0,
+    id: 11
+}, {
+    taskname: 'entertainment',
+    count: 0,
+    id: 12
+}, {
+    taskname: 'news_channel',
+    count: 0,
+    id: 13
+}];
+exports.taskList = taskList;
