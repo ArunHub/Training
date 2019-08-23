@@ -6,8 +6,11 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-const getTasks = taskObj.fetchAllTasks();
-getTasks.then((tasks) => {
+const d = new Date();
+const n = d.getDay();
+
+let getTasks = () => {
+    taskObj.fetchAllTasks().then((tasks) => {
         tasks.forEach(t => {
             console.log(t.id + ". " + t.taskname + " - " + t.count);
         })
@@ -15,6 +18,19 @@ getTasks.then((tasks) => {
     (err) => {
         console.error('errorrrrrrrrrrrrrrr', err)
     });
+}
+
+
+const isMonday = () => n === 1; 
+if (isMonday()) {
+    //reset every monday
+    taskObj.resetTaskCount().then(res => {
+        getTasks();
+    })
+}else{
+    getTasks();
+}
+
 
 // function findId(id) {
 //     var found = taskList.findIndex(t => {
@@ -28,19 +44,21 @@ getTasks.then((tasks) => {
 function askQns() {
     rl.question('\nWhat did you completed today from the list? \nType only numbers. If multiple, put commas. Ex:1 or 1,2,3\n', (answer) => {
         var pattern = /[0-9,]+/g;
-
+//check for comma pattern
         const regex = new RegExp(pattern);
 
         if (regex.test(answer)) {
-            console.log('adsf',answer)
-            console.log('type ', typeof answer)
             answer = answer.split(',').map(t=>Number.parseInt(t, 10));
-            taskObj.fetchSingleTask(answer).then(task => {
-                taskObj.fetchModifyTask(answer, task.count).then(res => {
-                    console.log('successfully modified-', res);
+            taskObj.findandModifyTask(answer).then(task => {
+                console.log('successfully modified-', task);
                     rl.close();
-                })
-            });
+            })
+            // taskObj.fetchSingleTask(answer).then(task => {
+            //     taskObj.fetchModifyTask(answer, task.count).then(res => {
+            //         console.log('successfully modified-', res);
+            //         rl.close();
+            //     })
+            // });
         } else {
             console.log('Invalid pattern / Not match found in list')
             askQns();
