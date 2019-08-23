@@ -29,10 +29,27 @@ class Event {
             });
         })
     }
-    fetchModifyTask(id, count) {
+    resetTaskCount() {
         return new Promise((resolve, reject) => {
             try {
-                db.dailytask.update({ id: Number.parseInt(id)}, {$set:{count: count+1}}, (err, doc) => {
+                db.dailytask.update({}, {$set:{count: 0}}, {multi: true}, (err, doc) => {
+                    if (err) {
+                        reject(err);
+                    }
+                    else {
+                        resolve(doc);
+                    }
+                });
+             } catch (e) {
+                console.error('xxxxxxxxxxxx',e);
+             }
+       
+        })
+    }
+    findandModifyTask(id) {
+        return new Promise((resolve, reject) => {
+            try {
+                db.dailytask.update({ id: {$in: id}}, {$inc:{count: 1}}, {multi: true}, (err, doc) => {
                     if (err) {
                         reject(err);
                     }
