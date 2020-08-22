@@ -1,2 +1,3 @@
 # Training
-training on node
+training on node, react, typescript, testing, JS, Mongodb in gmail
+
