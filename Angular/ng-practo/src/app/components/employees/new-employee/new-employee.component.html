@@ -1,0 +1,11 @@
+<h4>Register New Employee</h4>
+<form [formGroup]="form.employeeForm" (ngSubmit)="onSubmit()">
+  Username:
+  <input type="text" class="form-control" formControlName="username" /> Manager:
+  <select class="form-control" formControlName="role">
+    <option>Lead</option>
+    <option>Associate</option>
+    <option>Manager</option>
+  </select>
+  <button type="submit" class="btn btn-outline" [disabled]="!form.employeeForm.valid">Submit</button>
+</form>

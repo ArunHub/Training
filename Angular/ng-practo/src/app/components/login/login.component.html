@@ -1,0 +1,14 @@
+<h3>Login in in</h3>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form [formGroup]="form.loginForm" (ngSubmit)="onSubmit()">
+                Username:
+                <input type="text" class="form-control" formControlName="username" /> password:
+                <input type="password" class="form-control" formControlName="password" /> Manager:
+                <input type="checkbox" class="form-control" formControlName="isManager" />
+                <button type="submit" class="btn btn-outline" [disabled]="!form.loginForm.valid">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
