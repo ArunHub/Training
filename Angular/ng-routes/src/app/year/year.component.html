@@ -1,0 +1,13 @@
+<div class='year'>
+   <ul>
+      <li *ngFor="let y of list$ ">{{y.name}}</li>
+   </ul>
+   <!-- {{year}} -->
+   <div>
+      <button (click)="changeFortune(5)">change year</button>
+   </div>
+   <a routerLink='/year/apocalyse'>apocalyse</a>
+   <a routerLink='/year/6'>666</a>
+   <h3>child routes</h3>
+</div>
+<router-outlet></router-outlet>

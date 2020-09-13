@@ -1,0 +1,36 @@
+<h1 [innerText]="pageTitle"></h1>
+<h6 [innerText]="subTitle"></h6>
+<div class="container">
+    <div class="form-group">
+        <label for="inputSearchCharacter">Password</label>
+        <input type="search" class="form-control" [(ngModel)]="searchChar" id="inputSearchCharacter" placeholder="search Event by events name">
+    </div>
+</div>
+<table class="table table-hover table-striped" *ngIf="events && events.length else noDataTemplate">
+    <thead>
+        <tr>
+            <th>Event Name</th>
+            <th>Event Code</th>
+            <th>Start Date</th>
+            <th>Fees</th>
+            <th>Show details</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let event of events | filterBy:searchChar">
+            <td><span [innerText]="event.eventName | uppercase"></span></td>
+            <td><span [innerText]="event.eventCode  | lowercase"></span></td>
+            <td><span [innerText]="event.startDate  | date:'mm/dd/yyyy'"></span></td>
+            <td><span [innerText]="event.fees  | currency:'INR'"></span></td>
+            <td><button class="btn btn-primary" xclick="onEventSelect(event)" [routerLink]="['/events', event.eventId]" >show details</button></td>
+        </tr>
+    </tbody>
+</table>
+
+<ng-template #noDataTemplate>
+    <h4>No Events Listed</h4>
+</ng-template>
+
+<!-- <div class="container" *ngIf="selectedEvent">
+    <event-details [selEventId]="selectedEvent.eventId"></event-details>
+</div> -->

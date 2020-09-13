@@ -1,0 +1,66 @@
+<h1 [innerText]="pageTitle"></h1>
+<div class="container">
+    <form [formGroup]="event.eventForm">
+        <fieldset>
+            <legend>New Event Form</legend>
+            <div class="form-group">
+                <label for="inputEventId">Event Id</label>
+                <input type="number" class="form-control" id="inputEventId" name="inputEventId" placeholder="Enter Event Id" formControlName="eventId">
+                <div class="alert alert-danger" *ngIf="event.eventForm.controls['eventId'].hasError('required')">
+                    Please enter Event id
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputEventCode">Event Code</label>
+                <input type="text" class="form-control" id="inputEventCode" name="inputEventCode" placeholder="Enter Event Code" formControlName="eventCode">
+                <div class="alert alert-danger" *ngIf="event.eventForm.controls['eventCode'].hasError('required')">
+                    Please enter Event code
+                </div>
+
+                <div class="alert alert-danger" *ngIf="event.eventForm.controls['eventCode'].hasError('minlength')">
+                    Please enter minimum 6 digits   
+                </div>
+
+                <div class="alert alert-danger" *ngIf="event.eventForm.controls['eventCode'].hasError('maxlength')">
+                    Please enter maximum 6 digits 
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputEventName">Event Name</label>
+                <input type="text" class="form-control" id="inputEventName" name="inputEventName" placeholder="Enter Event Name" formControlName="eventName">
+                <div class="alert alert-danger" *ngIf="event.eventForm.controls['eventName'].hasError('required')">
+                    Please enter event name
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputEventDescription">Event Description</label>
+                <input type="text" class="form-control" id="inputEventDescription" name="inputEventDescription" placeholder="Enter Event Description" formControlName="description">
+            </div>
+            <div class="form-group">
+                <label for="inputEventStartDate">Event Start Date</label>
+                <input type="date" class="form-control" id="inputEventStartDate" name="inputEventStartDate" placeholder="Enter Event Start Date" formControlName="startDate">
+            </div>
+            <div class="form-group">
+                <label for="inputEventEndDate">Event End Date</label>
+                <input type="date" class="form-control" id="inputEventEndDate" name="inputEventEndDate" placeholder="Enter Event End Date" formControlName="endDate">
+            </div>
+            <div class="form-group">
+                <label for="inputEventFees">Event Fees</label>
+                <input type="number" class="form-control" id="inputEventFees" name="inputEventFees" placeholder="Enter Event Fees" formControlName="fees">
+            </div>
+            <div class="form-group">
+                <label for="inputEventSeatsFilled">Event Seats Filled</label>
+                <input type="number" class="form-control" id="inputEventSeatsFilled" name="inputEventSeatsFilled" placeholder="Enter Event Seats Filled" formControlName="seatsFilled">
+                <div class="alert alert-danger" *ngIf="event.eventForm.controls['seatsFilled'].hasError('min')">
+                    Minimum value should not be less than 100
+                </div>
+
+                <div class="alert alert-danger" *ngIf="event.eventForm.controls['seatsFilled'].hasError('max')">
+                    Maximum value should not be greater than 1000
+                </div>
+            </div>            
+            <button type="button" class="btn btn-primary" [disabled]="!event.eventForm.valid" (click)="onEventSubmission()">Register</button>
+        </fieldset>
+    </form>
+</div>

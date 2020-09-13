@@ -1,0 +1,32 @@
+<h1 [innerText]="pageTitle"></h1>
+<hr>
+<h6 [innerText]="subTitle"></h6>
+<p [innerText]="childMessage"></p>
+<table class="table table-hover table-striped" *ngIf="employees && employees.length else noDataTemplate">
+    <thead>
+        <tr>
+            <th>Employee Name</th>
+            <th>Email</th>
+            <th>Contact #</th>
+            <th>City</th>
+            <th>show details</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of employees">
+            <td><span [innerText]="employee.employeeName"></span></td>
+            <td><span [innerText]="employee.email"></span></td>
+            <td><span [innerText]="employee.phone"></span></td>
+            <td><span [innerText]="employee.city"></span></td>
+            <td><button class="btn btn-primary" (click)="onEmployeeSelect(employee)">show details</button></td>
+        </tr>
+    </tbody>
+</table>
+
+<ng-template #noDataTemplate>
+    <h4>Employees data not found</h4>
+</ng-template>
+
+<div class="container" *ngIf="selectedEmployee">
+    <employee-details [selEmployee]="selectedEmployee" (confirmation)="onChildMessageReceived($event)"></employee-details>
+</div>

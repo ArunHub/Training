@@ -1,0 +1,22 @@
+<div *ngIf="posts && posts.length>0">
+<h1 [innerText]="pageTitle"></h1>
+
+<table class="table table-hover table-striped">
+    <thead>
+        <tr>
+            <th>User Id</th>
+            <th>Post Id</th>
+            <th>Title</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let post of posts">
+            <td><span [innerText]="post.userId"></span></td>
+            <td><span [innerText]="post.id"></span></td>
+            <td><span [innerText]="post.title"></span></td>
+            <td><span [innerText]="post.body"></span></td>
+        </tr>
+    </tbody>
+</table>
+</div>

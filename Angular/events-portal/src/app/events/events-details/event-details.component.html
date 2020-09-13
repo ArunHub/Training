@@ -1,0 +1,52 @@
+<div *ngIf="event">
+<h1 [innerText]="pageTitle+event.eventName"></h1>
+<table class="table table-hover table-striped">
+    <tbody>
+        <tr>
+            <th>Event Id</th>
+            <td><span [innerText]="event.eventId"></span></td>
+        </tr>
+        <tr>
+            <th>Event Name</th>
+            <td><span [innerText]="event.eventName | uppercase"></span></td>
+        </tr>
+        <tr>
+            <th>Event Code</th>
+            <td><span [innerText]="event.eventCode | lowercase"></span></td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td><span [innerText]="event.description | capitalCase"></span></td>
+        </tr>
+        <tr>
+            <th>Start date</th>
+            <td><span [innerText]="event.startDate  | date"></span></td>
+        </tr>
+        <tr>
+            <th>End date</th>
+            <td><span [innerText]="event.endDate  | date"></span></td>
+        </tr>
+        <tr>
+            <th>Fees</th>
+            <td><span [innerText]="event.fees  | currency:'INR'"></span></td>
+        </tr>
+        <tr>
+            <th>Seats filled</th>
+            <td>
+                    <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" [style.width]="event.seatsFilled+'%'" [title]>
+                                {{event.seatsFilled+'%'}}</div>
+                          </div>
+            </td>
+        </tr>
+        <tr>
+            <th>Logo</th>
+            <td>
+                <img [src]="event.logo" class="img-fluid" [title]="event.eventName" [alt]="event.eventName"/>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<button class="btn btn-success" (click)="onSendConfirmation()">Confirm</button>
+
+</div>

@@ -1,0 +1,40 @@
+<h1 [innerText]="pageTitle+employee.employeeName"></h1>
+<table class="table table-hover table-striped">
+    <tbody>
+        <tr>
+            <th>Employee Id</th>
+            <td><span [innerText]="employee.employeeId"></span></td>
+        </tr>
+        <tr>
+            <th>Employee Name</th>
+            <td><span [innerText]="employee.employeeName"></span></td>
+        </tr>
+        <tr>
+            <th>address</th>
+            <td><span [innerText]="employee.address"></span></td>
+        </tr>
+        <tr>
+            <th>City</th>
+            <td><span [innerText]="employee.city"></span></td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td><span [innerText]="employee.email"></span></td>
+        </tr>
+        <tr>
+            <th>Phone</th>
+            <td><span [innerText]="employee.phone"></span></td>
+        </tr>
+        <tr>
+            <th>Platform</th>
+            <td><span [innerText]="employee.plaform"></span></td>
+        </tr>
+        <tr>
+            <th>Avatar</th>
+            <td>
+                <img [src]="employee.avatar" [title]="employee.employeeName" [alt]="employee.employeeName"/>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<button class="btn btn-success" (click)="onSendConfirmation()">Confirm</button>
