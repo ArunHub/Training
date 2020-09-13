@@ -1,0 +1,35 @@
+.App {
+  width: 100%;
+  margin: 50px auto;
+}
+
+.alert-success {
+  padding: 50px;
+  border:2px solid;
+  transform: translate(10px);
+  transition: transform 10s ease-in-out;
+}
+
+.reactchildren {
+  border: 1px solid darkcyan;
+  display: inline-block;
+}
+
+.container{
+  width: 100%;
+  display: flex;
+}
+
+.left, .right{
+width: 25%;
+}
+
+.middle{
+  width: 45%;
+  margin: 0 2%;
+}
+
+.route div{
+  margin: 5px;
+  border:1px slategrey solid;
+}

@@ -1,0 +1,13 @@
+import React, { Component } from 'react';
+import FF from '../FF/F.component';
+
+class EE extends Component {
+
+    render() {
+        return (
+            <div>Modified content</div>
+        );
+    }
+}
+
+export default EE;
